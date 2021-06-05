@@ -1,0 +1,35 @@
+body {
+  background-color: rgb(1, 0, 16);
+}
+
+.header-bar {
+  background-color: rgb(1, 0, 16);
+  padding: 0;
+}
+
+h1 {
+text-align: center;
+color: white;
+}
+
+.data-table {
+  margin-left: 18em;
+  /* margin-right: 18em; */
+}
+
+.attributes {
+  margin: 3em;
+  color: white;
+}
+
+.hero {
+  position: relative;
+  height: 750px;
+  padding: 20px;
+  margin: 0;
+  background-image: url("Images/lung2.jpg");
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}

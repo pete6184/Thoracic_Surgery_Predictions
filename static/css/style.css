@@ -1,0 +1,112 @@
+body {
+  background-color: rgb(1, 0, 16);
+}
+
+.header-bar {
+  background-color: rgb(1, 0, 16);
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 75px;
+  padding: .2em;
+  color: white;
+}
+
+h2  {
+  text-align: center;
+  font-size: 50px;
+  color: white;
+}
+
+h3 {
+text-align: center;
+margin-bottom: 0;
+}
+
+h4 {
+  color: white;
+}
+
+.resources {
+  margin-left: 1.5em;
+}
+
+.resource-links {
+  font-size: 18px
+}
+
+li {
+  color: white;
+}
+
+hr {
+  color: white;
+}
+
+.footer {
+  margin-left: 2em;
+  color: white;
+}
+
+.compare-headers {
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+}
+
+.data-link {
+  font-size: 20px;
+  color: black;
+  color: white;
+}
+
+.paragraph1 {
+    margin-left: 8em;
+    margin-right: 8em;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    padding: .5em;
+    background-color: rgb(103, 183, 226);
+}
+
+.hero {
+  position: relative;
+  height: 600px;
+  padding: 20px;
+  margin: 0;
+  background-image: url("Images/lung_spore.jpg");
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.colab {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+.compare-analysis {
+  margin-left: 8em;
+  margin-right: 8em;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  padding: .5em;
+  background-color: rgb(103, 183, 226);
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.data-info {
+  padding: 1em;
+  margin-bottom: 0;
+}
