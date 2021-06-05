@@ -34,7 +34,8 @@ h4 {
 }
 
 .resource-links {
-  font-size: 18px
+  font-size: 18px;
+  margin-left: 1em;
 }
 
 li {
@@ -77,7 +78,7 @@ hr {
   height: 600px;
   padding: 20px;
   margin: 0;
-  background-image: url("Images/lung_spore.jpg");
+  background-image: url("../../Resources/Images/lung_spore.jpg");
   background-attachment: fixed;
   background-position: bottom center;
   background-size: contain;

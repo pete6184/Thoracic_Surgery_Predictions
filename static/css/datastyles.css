@@ -27,7 +27,7 @@ color: white;
   height: 750px;
   padding: 20px;
   margin: 0;
-  background-image: url("Images/lung2.jpg");
+  background-image: url("../../Resources/Images/lung2.jpg");
   background-attachment: fixed;
   background-position: bottom center;
   background-size: 50%;
