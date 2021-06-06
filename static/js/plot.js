@@ -157,9 +157,8 @@ let layout7 = {
 
 Plotly.newPlot("plot7", data7, layout7);
 
-
 // Multiple axis FVC FEC data
-d3.csv("ThoracicSurgery.csv").then(function(thorData) {
+d3.csv("../Resources/Data/ThoracicSurgery.csv").then(function(thorData) {
 
   let fev1 = thorData.map(pre4 => pre4.PRE4)
   let fvc = thorData.map(pre5 => pre5.PRE5)
@@ -171,7 +170,7 @@ d3.csv("ThoracicSurgery.csv").then(function(thorData) {
     mode: 'markers',
     type: 'scatter',
     name: 'FEV1',
-    marker: { size: 7 }
+    marker: { size: 5 }
   };
 
   var trace13 = {
@@ -180,22 +179,22 @@ d3.csv("ThoracicSurgery.csv").then(function(thorData) {
     mode: 'markers',
     type: 'scatter',
     name: 'FVC',
-    marker: { size: 7 }
+    marker: { size: 5 }
   };
 
   var data8 = [ trace12, trace13 ];
 
   var layout8 = {
     xaxis: {
-        range: [ 20, 90 ]
+        range: [ 30, 90 ]
     },
     yaxis: {
-        range: [ 0, 10 ]
+        range: [ 0, 7 ]
     },
     title:'Age vs FEV1, FVC ',
     autosize: false,
-    width: 1200,
-    height: 900,
+    width: 1300,
+    height: 800,
     margin: {
       l: 100,
       r: 100,
