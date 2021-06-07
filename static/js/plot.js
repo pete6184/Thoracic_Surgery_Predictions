@@ -186,7 +186,7 @@ d3.csv("../Resources/Data/ThoracicSurgery.csv").then(function(thorData) {
 
   var layout8 = {
     xaxis: {
-        range: [ 30, 90 ]
+        range: [ 20, 90 ]
     },
     yaxis: {
         range: [ 0, 7 ]
