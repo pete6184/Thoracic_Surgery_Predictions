@@ -27,9 +27,6 @@
 - Are there pre-existing conditions present before surgery that correlate to a greater likelihood of mortality?
 
 ![Preconditions](https://user-images.githubusercontent.com/74940976/121128836-df6d0e00-c7e0-11eb-97f2-099bd753fbed.PNG)
-
-![Averages](https://user-images.githubusercontent.com/74940976/121128855-e7c54900-c7e0-11eb-9408-eed3c0138cbd.PNG)
-
         
  ## Project Summary
 
