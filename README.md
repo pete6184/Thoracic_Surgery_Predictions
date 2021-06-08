@@ -12,7 +12,7 @@
 ## Applications Used in Project
 - Machine Learning Library (Scikit-Learn)
 - Python Pandas
-- Python MatPlotLib
+- Plotly
 - HTML, CSS, Bootstrap
 
 ## Team Members
