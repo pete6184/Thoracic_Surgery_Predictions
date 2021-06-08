@@ -6,7 +6,7 @@
 - Clone repository to local computer
 - Create a conda environment using the requirements.txt file provided in the repo
 - Open jupyter notebook and run the cells
-#### To Depl0y Webpage:
+#### To Deploy Webpage:
 - https://pete6184.github.io/Final_Project/
 
 ## Applications Used in Project
