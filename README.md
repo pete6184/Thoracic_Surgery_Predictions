@@ -1,4 +1,5 @@
-![lung_spore](https://user-images.githubusercontent.com/74940976/121128328-1393ff00-c7e0-11eb-9326-5d22f279c6c8.jpg)
+![lung1](https://user-images.githubusercontent.com/74940976/121128416-39210880-c7e0-11eb-8edd-7f15dbfafc73.jpg)
+
 
 ## Instructions:
 #### Machine Learning Models
