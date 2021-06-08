@@ -153,7 +153,7 @@ let trace11 = {
 let data7 = [trace10, trace11];
 
 let layout7 = {
-  title: "Size of Original Tumor, 1: smallest to 4: largest",
+  title: "Size of Original Tumor, 11: smallest to 14: largest",
   barmode: 'group'
 };
 
