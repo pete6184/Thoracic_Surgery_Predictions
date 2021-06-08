@@ -20,6 +20,11 @@
 - Chii-Lien Sun
 - Pete Johnson
 
+## Purpose of Project
+
+While early detection provides the best chance of survival, lung cancer often goes undetected causing a delayed diagnosis and poor prognosis for survival. Unfortunately, this will only be further exacerbated by the current pandemic, due to strained resources and reduced in-person visits to a physician that may otherwise have uncovered symptoms. If we can identify primary indicators of high mortality within the first year of surgery, we can prioritize symptoms and encourage early detection methods in certain populations at greater risk.
+
+The purpose of this project is to examine the relationship between pre-existing conditions in known lung cancer patients, and the survival rate one year after undergoing thoracic lung surgery. We aim to determine which conditions, if any, may be a determining factor in predicting patients' survival prognoses.
 
 ## Problems to be solved
 
