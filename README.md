@@ -1,4 +1,4 @@
-![lung1](https://user-images.githubusercontent.com/74940976/121128416-39210880-c7e0-11eb-8edd-7f15dbfafc73.jpg)
+![lung1](https://user-images.githubusercontent.com/74940976/121128611-84d3b200-c7e0-11eb-9e9e-8538f0df616d.jpg)
 
 
 ## Instructions:
