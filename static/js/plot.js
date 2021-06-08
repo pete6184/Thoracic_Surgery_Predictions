@@ -19,48 +19,49 @@ Plotly.newPlot("plot1", data, layout);
 
 
 // Preconditions on only surviving patients after 1 year
-let trace2 = {
-  x: ["Pain", "Haemoptysis", "Dyspnoea", "Cough",
-    "Weakness", "Diabetes Typ2", "MI", "PAD", "Smoking", "Asthma"],
-  y: [24, 54, 22, 268, 61, 25, 2, 6, 323, 2],
-  type: "bar"
-};
-
-let data2 = [trace2];
-
-let layout2 = {
-  title: "Preconditions Found in Surviving Patients After 1 year",
-  xaxis: {
-    tickangle: -45
-  },
-};
-
-Plotly.newPlot("plot2", data2, layout2);
-
-// Preconditions on patients who died after 1 year
-let trace3 = {
-  x: ["Pain", "Haemoptysis", "Dyspnoea", "Cough",
-    "Weakness", "Diabetes Typ2", "MI", "PAD", "Smoking", "Asthma"],
-  y: [7, 14, 9, 55, 17, 10, 0, 2, 63, 0],
-  type: "bar"
-};
-
-let data3 = [trace3];
-
-let layout3 = {
-  title: "Preconditions Found in Patients Who Did Not Survive After 1 Year",
-  xaxis: {
-    tickangle: -45
-  },
-};
-
-Plotly.newPlot("plot3", data3, layout3);
+// let trace2 = {
+//   x: ["Pain", "Haemoptysis", "Dyspnoea", "Cough",
+//     "Weakness", "Diabetes Typ2", "MI", "PAD", "Smoking", "Asthma"],
+//   y: [24, 54, 22, 268, 61, 25, 2, 6, 323, 2],
+//   type: "bar"
+// };
+//
+// let data2 = [trace2];
+//
+// let layout2 = {
+//   title: "Preconditions Found in Surviving Patients After 1 year",
+//   xaxis: {
+//     tickangle: -45
+//   },
+// };
+//
+// Plotly.newPlot("plot2", data2, layout2);
+//
+// // Preconditions on patients who died after 1 year
+// let trace3 = {
+//   x: ["Pain", "Haemoptysis", "Dyspnoea", "Cough",
+//     "Weakness", "Diabetes Typ2", "MI", "PAD", "Smoking", "Asthma"],
+//   y: [7, 14, 9, 55, 17, 10, 0, 2, 63, 0],
+//   type: "bar"
+// };
+//
+// let data3 = [trace3];
+//
+// let layout3 = {
+//   title: "Preconditions Found in Patients Who Did Not Survive After 1 Year",
+//   xaxis: {
+//     tickangle: -45
+//   },
+// };
+//
+// Plotly.newPlot("plot3", data3, layout3);
 
 // Preconditions on grouped by surviving vs death after 1 Year
 let trace4 = {
   x: ["Pain", "Haemoptysis", "Dyspnoea", "Cough",
     "Weakness", "Diabetes Typ2", "MI", "PAD", "Smoking", "Asthma"],
   y: [24, 54, 22, 268, 61, 25, 2, 6, 323, 2],
+  text: ['6%', '14%', '5%', '67%', '15%', "6%", "1%", "2%", "81%", "1%" ],
   name: "Survived",
   type: "bar"
 };
@@ -69,6 +70,7 @@ let trace5 = {
   x: ["Pain", "Haemoptysis", "Dyspnoea", "Cough",
     "Weakness", "Diabetes Typ2", "MI", "PAD", "Smoking", "Asthma"],
   y: [7, 14, 9, 55, 17, 10, 0, 2, 63, 0],
+  text: ['10%', '20%', '13%', '79%', '24%', "14%", "0%", "3%", "90%", "0%" ],
   name: "Non-suriving",
   type: "bar"
 };
@@ -76,7 +78,7 @@ let trace5 = {
 let data4 = [trace4, trace5];
 
 let layout4 = {
-  title: "Preconditions Found in Surviving Patients Comparted to Non-Surviving Patients",
+  title: "Preconditions Found in Surviving Patients Compared to Non-Surviving Patients",
   xaxis: {
     tickangle: -45
   },
