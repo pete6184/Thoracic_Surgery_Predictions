@@ -105,7 +105,7 @@ let trace7 = {
 let data5 = [trace6, trace7];
 
 let layout5 = {
-  title: "Diagnonis of IDC-10 codes for primary & secondary as well multiple tumors if any",
+  title: "Tumor Diagnosis",
   barmode: 'group'
 };
 
