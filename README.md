@@ -10,7 +10,7 @@
 - https://pete6184.github.io/Final_Project/
 
 ## Applications Used in Project
-- Machine Learning Library (Scikit-Learn)
+- Machine Learning Library (Scikit-Learn, TensorFlow)
 - Python Pandas
 - Plotly
 - HTML, CSS, Bootstrap
