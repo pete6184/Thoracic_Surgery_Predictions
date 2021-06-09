@@ -125,8 +125,19 @@
               <div id="plot5"></div>
               <p class="compare-analysis-large" style="font-size: 20px">Each DGN utilizes a specific comibination of
                 ICD-10 (International Classification of Diseases) codes for primary and secondary, and multiple tumors,
-                if any. Wile the orginal dataset could not be attained, we can see that the type of tumor involvement is
-                worth considering.</p>
+                if any. 
+                <br>
+                <br>*Wile the orginal dataset could not be attained, possible elaboration of these values can be considered from the 1999 WHO classification of lung/pleaural tumors: 
+                <br>1: Epithelial Tumours 
+                <br>2: Soft Tissue Tumours
+                <br>3: Mesothelial Tumours
+                <br>4: Miscellaneous Tumours
+                <br>5: Lymphoproliferative Disease
+                <br>6: Secondary Tumours
+                <br>7: Unclassified Tumours
+                <br>8: Tumour-like Lesions
+                .</br>
+              </p>
             </div>
             <div class="col-lg-6 col-sm-12">
               <div id="plot6"></div>
@@ -207,26 +218,25 @@
               <p class="compare-headers">Load and Pre-process Data</p>
               <div class="compare-analysis-large" style="font-size: 18px">
                 <ul class="list">
-                  <br>
                   <ls>Import dependencies, use NumPy to set random seed to 1 so results are reproducible. Read in csv
-                    using Pandas, drop “id” column</ls></br>
+                    using Pandas, drop “id” column</ls>
                   <br>
-                  <ls>Set data for classifier: Set target (y-value) as “Risk1Yr”, Set target names (“T” = Not Survived,
+                  <br><ls>Set data for classifier: Set target (y-value) as “Risk1Yr”, Set target names (“T” = Not Survived,
                     “F” = Survived at one year post-op). Drop “Risk1Yr” from data for X, use Pandas to apply
-                    get_dummies, set feature names as data columns</ls></br>
+                    get_dummies, set feature names as data columns</ls>
                   <br>
-                  <ls>Create train, test, split using scikit-learn</ls></br>
+                  <br><ls>Create train, test, split using scikit-learn</ls>
                   <br>
-                  <ls>Create and score scikit-learn Random Forest classifier, sort features by importance</ls></br>
+                  <br><ls>Create and score scikit-learn Random Forest classifier, sort features by importance</ls>
                   <br>
-                  <ls>Establish X (data) and y (target)</ls></br>
+                  <br><ls>Establish X (data) and y (target)</ls>
                   <br>
-                  <ls>Create train, test, split. After trying different values, 20% test size provided optimal results.
-                    Added “stratify=y” to disperse data between test/train more randomly</ls></br>
+                  <br><ls>Create train, test, split. After trying different values, 20% test size provided optimal results.
+                    Added “stratify=y” to disperse data between test/train more randomly</ls>
                   <br>
-                  <ls>Scale data: Use scikit-learn MinMaxScaler to fit X train then transform X train/test. Label-encode
+                  <br><ls>Scale data: Use scikit-learn MinMaxScaler to fit X train then transform X train/test. Label-encode
                     target dataset using scikit-learn, fit y train and transform y train/test. Convert to
-                    one-hot-endoding using TensorFlow to_categorical</ls></br>
+                    one-hot-endoding using TensorFlow to_categorical</ls>
                 </ul>
               </div>
             </div>
@@ -300,6 +310,10 @@
     Donor: Maciej Zieba (maciej.zieba '@' pwr.wroc.pl), Jakub M. Tomczak (jakub.tomczak '@' pwr.wroc.pl), (+48) 71 320
     44 53 <br>
     Date: November, 2013 <br>
+    <br>
+    Travis WD, Colby TV, Corrin B, Shimosato Y, Brambilla E. In Collaboration with Sobin LH and Pathologists from 14 Countries.<br>
+    World Health Organization International Histological Classification of Tumours. Histological Typing of Lung and Pleural Tumours.<br>
+    3rd EdnSpringer-Verlag, 1999
     <br>
   </footer>
 
