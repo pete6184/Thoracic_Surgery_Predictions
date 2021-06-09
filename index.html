@@ -42,39 +42,33 @@
         <p class="data-info" style="font-size: 20px">
           In the United States, lung cancer is the second most common cancer in both men and women.
           According to the American Cancer Society, in 2021, it is estimated that over 235,000 new cases will be diagnosed, and 131,000 people will die from lung cancer.
-
-          *While early detection provides the best chance of survival, lung cancer often goes undetected causing a delayed diagnosis and poor prognosis for survival. Unfortunately, this will only be further exacerbated by the current pandemic, due to strained resources and reduced in-person visits to a physician that may otherwise have uncovered symptoms. If we can identify primary indicators of high mortality within the first year of surgery, we can prioritize symptoms and encourage early detection methods in certain populations at greater risk.   
-
-          While these numbers are disheartening, we know there are options for people diagnosed with lung cancer to be able to beat the disease, or at the very least
-          prolong their life. In cases where chemotherapy is not an option, or is not working, another option is to have the cancerous cells and nearby lymph nodes removed via surgery.
           <br>
           <br>
-          *The purpose of this project is to examine the relationship between pre-existing conditions in known lung cancer patients, and the survival rate one year after undergoing thoracic lung surgery. We aim to determine which conditions, if any, may be a determining factor in predicting patients' survival prognoses.
-
-          Our goal for this project was to try and predict the survival rates for patients having thoracic lung surgery.
-
+          While early detection provides the best chance of survival, lung cancer often goes undetected causing a delayed diagnosis and poor prognosis for survival.
+          Unfortunately, this will only be further exacerbated by the current pandemic, due to strained resources and reduced in-person visits to a physician that may
+          otherwise have uncovered symptoms. If we can identify primary indicators of high mortality within the first year of surgery, we can prioritize symptoms and
+          encourage early detection methods in certain populations at greater risk.
+          <br>
+          <br>
+          The purpose of this project is to examine the relationship between pre-existing conditions in known lung cancer patients, and the survival rate one year after undergoing thoracic lung surgery.
+          We aim to determine which conditions, if any, may be a determining factor in predicting patients' survival prognoses.
         </p>
           <hr>
           <br>
       <h3>Problem to Be Solved</h3>
         <p class="data-info" style="font-size: 20px">
-          *Can we accurately predict a person's likelihood of surviving lung cancer one year post-operatively?
-          *Are there pre-existing conditions present before surgery that correlate to a greater likelihood of mortality?
-
-          We are trying to determine whether thoracic surgery will extend the life of lung cancer patients. The qualification in this study is whether patients survived one year after the surgery.
+          Can we accurately predict a person's likelihood of surviving lung cancer one year post-operatively?
+          <br>
+          <br>
+          Are there pre-existing conditions present before surgery that correlate to a greater likelihood of mortality?
         </p>
           <hr>
           <br>
       <h3>Machine Learning Models</h3>
         <p class="data-info" style="font-size: 20px">
-          *We created and analyzed multiple machine learning models to predict whether the pre-existing conditions could accurately predict 1 year post-surgery survival rate.
+          We created and analyzed multiple machine learning models to predict whether the pre-existing conditions could accurately predict 1 year post-surgery survival rate.
           By utilizing the Machine Learning algorithms and examining the feature importance of pre-existing conditions that are most likely to affect the patients’ outcome,
           we were able to predict the likelihood of post-surgery survival with an 83% accuracy and 86% precision using a normal neural network sequential learning model and subsequent grid search.
-
-          We created multiple machine learning models to predict whether the pre-existing conditions would lead to a 1 year post-surgery survival rate.
-          By utilizing the Machine Learning algorithms and examining the predominate pre-existing conditions that are most likely to affect the patients’ outcome,
-          we were able to predict the likelihood of a post-surgery survival.
-
         </p>
           <hr>
           <br>
@@ -94,21 +88,16 @@
               <div class="col-lg-12 col-sm-12">
                   <div id="plot1"></div>
                 <p class="compare-analysis-large" style="font-size: 20px">This bar chart shows the most common pre-existing conditions for all
-                   patients who took part in the surgery. As you can see, smoking (along with a subsequent cough) is the number one factor among patients by an overwhelming majority.</p>
-              </div>
-              <div class="col-lg-6 col-sm-12">
-                  <div id="plot2"></div>
-                <p class="compare-analysis-small" style="font-size: 20px">This bar chart shows the pre-existing conditions in the patients who survived the surgery.
-                    Again, smoking is the number one factor.</p>
-              </div>
-              <div class="col-lg-6 col-sm-12">
-                  <div id="plot3"></div>
-                <p class="compare-analysis-small" style="font-size: 20px">This bar chart shows the pre-existing conditions in the patients who did not survive the surgery.
-                    And once again, smoking is the number one factor.</p>
+                   patients who took part in the surgery. As you can see, smoking (along with a subsequent cough) is the number one factor among patients by an overwhelming majority.
+                </p>
               </div>
               <div class="col-lg-12 col-sm-12">
                   <div id="plot4"></div>
-                <p class="compare-analysis-large" style="font-size: 20px">This is where we will explain the analysis for this visualization</p>
+                <p class="compare-analysis-large" style="font-size: 20px">This bar chart shows the comparison of the pre-existing conditions found in patients that survived post 1 year of the surgery versus
+                  the patients who did not survive. One of the most important details for this side-by-side comparison is that there were 400 patients who survived versus 70 patients who did not.
+                  This graph is more valuable when looking at the direct comparison. While smoking was found in 81% of the surviving patients, the non-surviving patients had 90% that were smokers. The
+                  more valuable comparison is when the percentages are comparatively a third or more prevalently found in the non-surviving patients than there were in the surviving patients.
+                </p>
               </div>
               <div class="col-lg-12 col-sm-12">
                   <div id="plot5"></div>
@@ -116,15 +105,30 @@
               </div>
               <div class="col-lg-6 col-sm-12">
                   <div id="plot6"></div>
-                <p class="compare-analysis-small" style="font-size: 20px">This is where we will explain the analysis for this visualization</p>
+                <p class="compare-analysis-small" style="font-size: 20px">The Zubrod scale is a type of patient performance status scale for cancer care and treatment patients. The Zubrod scale has a 0 - 4 scale.
+                  <br>0: patient having normal activity.
+                  <br>1: symptomatic & ambulatory but can care for oneself.
+                  <br>2: ambulatory greater than 50% and needing occasional assistance.
+                  <br>3: ambulatory less than 50% and nursing care is needed.
+                  <br>4: bedridden
+                  <br>In this study and dataset, the cancer patients were only found to be from 0 - 2. Which would correlate with the surgery selection for these patients rather than chemo or any other procedure decided upon.
+                </p>
               </div>
               <div class="col-lg-6 col-sm-12">
                   <div id="plot7"></div>
-                <p class="compare-analysis-small" style="font-size: 20px">This is where we will explain the analysis for this visualization</p>
+                <p class="compare-analysis-small" style="font-size: 20px">This data is referred to as T in clinical TNM which correlates with the original size of the tumor and is the globally recognized standard for
+                  classifying the extent of spread of cancer. In this dataset, the values ranged from OC11 to OC14. OC11 is the smallest size, making OC14 the largest. The larger amount of the patients were found to have
+                  OC12, which was interesting. This would an interesting path to research for a deeper analysis to find out if this tumor size classification is the safer size and scale at which surgeons recommend this
+                  surgery. Or what other factors contributed to have so many more patients with OC12 tumors to have this surgery rather than the other values.
+                </p>
               </div>
               <div class="col-lg-12 col-sm-12">
                   <div id="plot8"></div>
-                <p class="compare-analysis-large" style="font-size: 20px">This is where we will explain the analysis for this visualization</p>
+                <p class="compare-analysis-large" style="font-size: 20px">Forced vital capacity (FVC) is the amount of air that a person can forcibly exhale from their lungs after taking the deepest breath possible, as measured
+                  by spirometry. This test can assist doctors gauge progression of lung disease and effectiveness of possible treatment. FCV refers to the amount of air a person can exhale, after inhaling as much as they can. FEV1
+                  differs, but can be tested along with FVC, by measuring the amount of air a person can exhale in one second. This graph does show the correlation between the two measured tests by how the data points are grouped
+                  together. When plotted against age, these measurements show the slightly decreasing linear path as age increases. This would correlate with the assumption that lung capacity decreases with age.
+                </p>
               </div>
                 <script src="static/js/plot.js"></script>
             </div>

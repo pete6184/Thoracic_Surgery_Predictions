@@ -71,7 +71,7 @@ hr {
     margin-bottom: 4em;
     padding: .5em;
     background-color: rgb(103, 183, 226);
-    text-align: center;
+    /* text-align: center; */
 }
 
 .hero {
@@ -122,8 +122,4 @@ img {
 .data-info {
   padding: 1em;
   margin-bottom: 0;
-}
-
-.compare {
-  /* margin: 1em; */
 }
