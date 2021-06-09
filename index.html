@@ -1,221 +1,312 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="static/css/style.css">
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 
-    <title>Thoracic Surgery</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light header-bar">
-      <div class="container-fluid header-bar">
-        <div class="collapse navbar-collapse" style="padding-right: 1em" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link data-link data-link" style="color: white" href="data.html">Data</a>
-            </li>
-          </ul>
+  <title>Thoracic Surgery</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light header-bar">
+    <div class="container-fluid header-bar">
+      <div class="collapse navbar-collapse" style="padding-right: 1em" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link data-link data-link" style="color: white" href="data.html">Data</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1>Thoracic Surgery</h1>
+
+  <div class="hero text-center">
+  </div>
+  <br>
+  <div class="colab">
+    <strong>Presented By:</strong> <br>
+    Serena Baker <br>
+    Chii-Lien Sun <br>
+    Pete Johnson <br>
+  </div>
+
+
+  <div class="paragraph1">
+    <h3>Purpose for Analysis</h3>
+    <p class="data-info" style="font-size: 20px">
+      In the United States, lung cancer is the second most common cancer in both men and women.
+      According to the American Cancer Society, in 2021, it is estimated that over 235,000 new cases will be diagnosed,
+      and 131,000 people will die from lung cancer.
+      <br>
+      <br>
+      While early detection provides the best chance of survival, lung cancer often goes undetected causing a delayed
+      diagnosis and poor prognosis for survival.
+      Unfortunately, this will only be further exacerbated by the current pandemic, due to strained resources and
+      reduced in-person visits to a physician that may
+      otherwise have uncovered symptoms. If we can identify primary indicators of high mortality within the first year
+      of surgery, we can prioritize symptoms and
+      encourage early detection methods in certain populations at greater risk.
+      <br>
+      <br>
+      The purpose of this project is to examine the relationship between pre-existing conditions in known lung cancer
+      patients, and the survival rate one year after undergoing thoracic lung surgery.
+      We aim to determine which conditions, if any, may be a determining factor in predicting patients' survival
+      prognoses.
+    </p>
+    <hr>
+    <br>
+    <h3>Problem to Be Solved</h3>
+    <p class="data-info" style="font-size: 20px">
+      Can we accurately predict a person's likelihood of surviving lung cancer one year post-operatively?
+      <br>
+      <br>
+      Are there pre-existing conditions present before surgery that correlate to a greater likelihood of mortality?
+    </p>
+    <hr>
+    <br>
+    <h3>Machine Learning Models</h3>
+    <p class="data-info" style="font-size: 20px">
+      We created and analyzed multiple machine learning models to predict whether the pre-existing conditions could
+      accurately predict 1 year post-surgery survival rate.
+      By utilizing the supervised learning model algorithms and examining the feature importance of pre-existing
+      conditions that are most likely to affect the patients’ outcome,
+      we were able to predict the likelihood of post-surgery survival with an 83% accuracy and 86% precision using a
+      normal neural network sequential learning model and subsequent grid search.
+    </p>
+    <hr>
+    <br>
+    <h3>Data Set Information</h3>
+    <p class="data-info" style="font-size: 20px">
+      The data was collected retrospectively at Wroclaw Thoracic Surgery Centre for patients who underwent major lung
+      resections for primary lung cancer in the years 2007-2011. The Centre is associated with the Department of
+      Thoracic Surgery of the Medical University of Wroclaw and Lower-Silesian Centre for Pulmonary Diseases, Poland,
+      while the research database constitutes a part of the National Lung Cancer Registry, administered by the Institute
+      of Tuberculosis and Pulmonary Diseases in Warsaw, Poland (Lubicz, Pawelczyk, Rzechonek, Kolodziej).
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-sm-12">
+        <div class="compare">
+          <h2>Analysis</h2>
+          <hr>
+          <div class="row">
+            <div class="col-lg-12 col-sm-12">
+              <div id="plot1"></div>
+              <p class="compare-analysis-large" style="font-size: 20px">This bar chart shows the most common
+                pre-existing conditions for all
+                patients who took part in the surgery. As you can see, smoking (along with a subsequent cough) is the
+                number one factor among patients by an overwhelming majority.
+              </p>
+            </div>
+            <div class="col-lg-12 col-sm-12">
+              <div id="plot4"></div>
+              <p class="compare-analysis-large" style="font-size: 20px">This bar chart shows the comparison of the
+                pre-existing conditions found in patients that survived post 1 year of the surgery versus
+                the patients who did not survive. One of the most important details for this side-by-side comparison is
+                that there were 400 patients who survived versus 70 patients who did not.
+                This graph is more valuable when looking at the direct comparison. While smoking was found in 81% of the
+                surviving patients, the non-surviving patients had 90% that were smokers. The
+                more valuable comparison is when the percentages are comparatively a third or more prevalently found in
+                the non-surviving patients than there were in the surviving patients.
+              </p>
+            </div>
+            <div class="col-lg-12 col-sm-12">
+              <div id="plot5"></div>
+              <p class="compare-analysis-large" style="font-size: 20px">Each DGN utilizes a specific comibination of
+                ICD-10 (International Classification of Diseases) codes for primary and secondary, and multiple tumors,
+                if any. Wile the orginal dataset could not be attained, we can see that the type of tumor involvement is
+                worth considering.</p>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+              <div id="plot6"></div>
+              <p class="compare-analysis-small" style="font-size: 20px">The Zubrod scale is a type of patient
+                performance status scale for cancer care and treatment patients. The Zubrod scale has a 0 - 4 scale.
+                <br>0: patient having normal activity.
+                <br>1: symptomatic & ambulatory but can care for oneself.
+                <br>2: ambulatory greater than 50% and needing occasional assistance.
+                <br>3: ambulatory less than 50% and nursing care is needed.
+                <br>4: bedridden
+                <br>In this study and dataset, the cancer patients were only found to be from 0 - 2. Which would
+                correlate with the surgery selection for these patients rather than chemo or any other procedure decided
+                upon.
+              </p>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+              <div id="plot7"></div>
+              <p class="compare-analysis-small" style="font-size: 20px">This data is referred to as T in clinical TNM
+                which correlates with the original size of the tumor and is the globally recognized standard for
+                classifying the extent of spread of cancer. In this dataset, the values ranged from OC11 to OC14. OC11
+                is the smallest size, making OC14 the largest. The larger amount of the patients were found to have
+                OC12, which was interesting. This would an interesting path to research for a deeper analysis to find
+                out if this tumor size classification is the safer size and scale at which surgeons recommend this
+                surgery. Or what other factors contributed to have so many more patients with OC12 tumors to have this
+                surgery rather than the other values.
+              </p>
+            </div>
+            <div class="col-lg-12 col-sm-12">
+              <div id="plot8"></div>
+              <p class="compare-analysis-large" style="font-size: 20px">Forced vital capacity (FVC) is the amount of air
+                that a person can forcibly exhale from their lungs after taking the deepest breath possible, as measured
+                by spirometry. This test can assist doctors gauge progression of lung disease and effectiveness of
+                possible treatment. FCV refers to the amount of air a person can exhale, after inhaling as much as they
+                can. FEV1
+                differs, but can be tested along with FVC, by measuring the amount of air a person can exhale in one
+                second. This graph does show the correlation between the two measured tests by how the data points are
+                grouped
+                together. When plotted against age, these measurements show the slightly decreasing linear path as age
+                increases. This would correlate with the assumption that lung capacity decreases with age.
+              </p>
+            </div>
+            <script src="static/js/plot.js"></script>
+            <div class="col-lg-12 col-sm-12">
+              <img class="link_image" style="width: 50%" src="Resources/Images\Averages.PNG" alt="Averages Chart">
+              <p class="compare-analysis-large" style="font-size: 20px">This chart compares the average FVC, FEV, Tumor
+                Size, and Age of the survivors verses the non-survivors.
+                <br>
+                <br>
+                The main component that stood out here was that FEV levels are considerably higher in survivors. This
+                leads us to believe that FEV levels are one of the main determining factors
+                in whether patients survive one year post surgery.
+              </p>
+            </div>
+
+          </div>
         </div>
       </div>
-    </nav>
-
-    <h1>Thoracic Surgery</h1>
-
-    <div class="hero text-center">
     </div>
-    <br>
-    <div class="colab">
-      <strong>Presented By:</strong> <br>
-      Serena Baker <br>
-      Chii-Lien Sun <br>
-      Pete Johnson <br>
-    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="machine-learning">
+    <h2>Machine Learning Models / Results</h2>
 
-
-    <div class="paragraph1">
-      <h3>Purpose for Analysis</h3>
-        <p class="data-info" style="font-size: 20px">
-          In the United States, lung cancer is the second most common cancer in both men and women.
-          According to the American Cancer Society, in 2021, it is estimated that over 235,000 new cases will be diagnosed, and 131,000 people will die from lung cancer.
-          <br>
-          <br>
-          While early detection provides the best chance of survival, lung cancer often goes undetected causing a delayed diagnosis and poor prognosis for survival.
-          Unfortunately, this will only be further exacerbated by the current pandemic, due to strained resources and reduced in-person visits to a physician that may
-          otherwise have uncovered symptoms. If we can identify primary indicators of high mortality within the first year of surgery, we can prioritize symptoms and
-          encourage early detection methods in certain populations at greater risk.
-          <br>
-          <br>
-          The purpose of this project is to examine the relationship between pre-existing conditions in known lung cancer patients, and the survival rate one year after undergoing thoracic lung surgery.
-          We aim to determine which conditions, if any, may be a determining factor in predicting patients' survival prognoses.
-        </p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-sm-12">
+        <div class="compare">
           <hr>
-          <br>
-      <h3>Problem to Be Solved</h3>
-        <p class="data-info" style="font-size: 20px">
-          Can we accurately predict a person's likelihood of surviving lung cancer one year post-operatively?
-          <br>
-          <br>
-          Are there pre-existing conditions present before surgery that correlate to a greater likelihood of mortality?
-        </p>
-          <hr>
-          <br>
-      <h3>Machine Learning Models</h3>
-        <p class="data-info" style="font-size: 20px">
-          We created and analyzed multiple machine learning models to predict whether the pre-existing conditions could accurately predict 1 year post-surgery survival rate.
-          By utilizing the Machine Learning algorithms and examining the feature importance of pre-existing conditions that are most likely to affect the patients’ outcome,
-          we were able to predict the likelihood of post-surgery survival with an 83% accuracy and 86% precision using a normal neural network sequential learning model and subsequent grid search.
-        </p>
-          <hr>
-          <br>
-      <h3>Data Set Information</h3>
-        <p class="data-info" style="font-size: 20px">
-          The data was collected retrospectively at Wroclaw Thoracic Surgery Centre for patients who underwent major lung resections for primary lung cancer in the years 2007-2011. The Centre is associated with the Department of Thoracic Surgery of the Medical University of Wroclaw and Lower-Silesian Centre for Pulmonary Diseases, Poland, while the research database constitutes a part of the National Lung Cancer Registry, administered by the Institute of Tuberculosis and Pulmonary Diseases in Warsaw, Poland (Lubicz, Pawelczyk, Rzechonek, Kolodziej).
-        </p>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-sm-12">
-          <div class="compare">
-            <h2>Analysis</h2>
-            <hr>
-            <div class="row">
-              <div class="col-lg-12 col-sm-12">
-                  <div id="plot1"></div>
-                <p class="compare-analysis-large" style="font-size: 20px">This bar chart shows the most common pre-existing conditions for all
-                   patients who took part in the surgery. As you can see, smoking (along with a subsequent cough) is the number one factor among patients by an overwhelming majority.
-                </p>
-              </div>
-              <div class="col-lg-12 col-sm-12">
-                  <div id="plot4"></div>
-                <p class="compare-analysis-large" style="font-size: 20px">This bar chart shows the comparison of the pre-existing conditions found in patients that survived post 1 year of the surgery versus
-                  the patients who did not survive. One of the most important details for this side-by-side comparison is that there were 400 patients who survived versus 70 patients who did not.
-                  This graph is more valuable when looking at the direct comparison. While smoking was found in 81% of the surviving patients, the non-surviving patients had 90% that were smokers. The
-                  more valuable comparison is when the percentages are comparatively a third or more prevalently found in the non-surviving patients than there were in the surviving patients.
-                </p>
-              </div>
-              <div class="col-lg-12 col-sm-12">
-                  <div id="plot5"></div>
-                <p class="compare-analysis-large" style="font-size: 20px">Each DGN utilizes a specific comibination of ICD-10 (International Classification of Diseases) codes for primary and secondary, and multiple tumors, if any. Wile the orginal dataset could not be attained, we can see that the type of tumor involvement is worth considering.</p>
-              </div>
-              <div class="col-lg-6 col-sm-12">
-                  <div id="plot6"></div>
-                <p class="compare-analysis-small" style="font-size: 20px">The Zubrod scale is a type of patient performance status scale for cancer care and treatment patients. The Zubrod scale has a 0 - 4 scale.
-                  <br>0: patient having normal activity.
-                  <br>1: symptomatic & ambulatory but can care for oneself.
-                  <br>2: ambulatory greater than 50% and needing occasional assistance.
-                  <br>3: ambulatory less than 50% and nursing care is needed.
-                  <br>4: bedridden
-                  <br>In this study and dataset, the cancer patients were only found to be from 0 - 2. Which would correlate with the surgery selection for these patients rather than chemo or any other procedure decided upon.
-                </p>
-              </div>
-              <div class="col-lg-6 col-sm-12">
-                  <div id="plot7"></div>
-                <p class="compare-analysis-small" style="font-size: 20px">This data is referred to as T in clinical TNM which correlates with the original size of the tumor and is the globally recognized standard for
-                  classifying the extent of spread of cancer. In this dataset, the values ranged from OC11 to OC14. OC11 is the smallest size, making OC14 the largest. The larger amount of the patients were found to have
-                  OC12, which was interesting. This would an interesting path to research for a deeper analysis to find out if this tumor size classification is the safer size and scale at which surgeons recommend this
-                  surgery. Or what other factors contributed to have so many more patients with OC12 tumors to have this surgery rather than the other values.
-                </p>
-              </div>
-              <div class="col-lg-12 col-sm-12">
-                  <div id="plot8"></div>
-                <p class="compare-analysis-large" style="font-size: 20px">Forced vital capacity (FVC) is the amount of air that a person can forcibly exhale from their lungs after taking the deepest breath possible, as measured
-                  by spirometry. This test can assist doctors gauge progression of lung disease and effectiveness of possible treatment. FCV refers to the amount of air a person can exhale, after inhaling as much as they can. FEV1
-                  differs, but can be tested along with FVC, by measuring the amount of air a person can exhale in one second. This graph does show the correlation between the two measured tests by how the data points are grouped
-                  together. When plotted against age, these measurements show the slightly decreasing linear path as age increases. This would correlate with the assumption that lung capacity decreases with age.
-                </p>
-              </div>
-                <script src="static/js/plot.js"></script>
-              <div class="col-lg-12 col-sm-12">
-                  <img class="link_image" style="width: 50%" src="Resources/Images\Averages.PNG" alt="Averages Chart">
-                <p class="compare-analysis-large" style="font-size: 20px">This chart compares the average FVC, FEV, Tumor Size, and Age of the survivors verses the non-survivors.
+          <div class="row">
+            <div class="col-lg-12 col-sm-12">
+              <p class="compare-headers">Load and Pre-process Data</p>
+              <div class="compare-analysis-large" style="font-size: 18px">
+                <ul class="list">
                   <br>
+                  <ls>Import dependencies, use NumPy to set random seed to 1 so results are reproducible. Read in csv
+                    using Pandas, drop “id” column</ls></br>
                   <br>
-                  The main component that stood out here was that FEV levels are considerably higher in survivors. This leads us to believe that FEV levels are one of the main determining factors
-                  in whether patients survive one year post surgery.</p>
+                  <ls>Set data for classifier: Set target (y-value) as “Risk1Yr”, Set target names (“T” = Not Survived,
+                    “F” = Survived at one year post-op). Drop “Risk1Yr” from data for X, use Pandas to apply
+                    get_dummies, set feature names as data columns</ls></br>
+                  <br>
+                  <ls>Create train, test, split using scikit-learn</ls></br>
+                  <br>
+                  <ls>Create and score scikit-learn Random Forest classifier, sort features by importance</ls></br>
+                  <br>
+                  <ls>Establish X (data) and y (target)</ls></br>
+                  <br>
+                  <ls>Create train, test, split. After trying different values, 20% test size provided optimal results.
+                    Added “stratify=y” to disperse data between test/train more randomly</ls></br>
+                  <br>
+                  <ls>Scale data: Use scikit-learn MinMaxScaler to fit X train then transform X train/test. Label-encode
+                    target dataset using scikit-learn, fit y train and transform y train/test. Convert to
+                    one-hot-endoding using TensorFlow to_categorical</ls></br>
+                </ul>
               </div>
-
+            </div>
+            <div class="col-lg-12 col-sm-12">
+              <p class="compare-headers">Model Summary</p>
+              <img class="link_image" src="Resources/Images/model_summary.png" alt="ML Model Summary">
+              <p class="compare-analysis-large" style="font-size: 20px">Upon analysis of multiple models, we found the
+                greatest accuracy using a TensorFlow Normal Neural Network Sequential model with ReLU activation. We
+                then compiled the model with Adam optimizer, CategoricalCrossentropy to compute loss between labels and
+                predictions, and fit the model with the training data
+              </p>
+            </div>
+            <div class="col-lg-12 col-sm-12">
+              <p class="compare-headers">Model Evaluation</p>
+              <img class="link_image" src="Resources/Images/model_evaluation.png" alt="ML Model Evaluation">
+              <p class="compare-analysis-large" style="font-size: 20px">The final model applied to the testing data
+                provided 81.9% accuracy. Given the size of the target and dataset, we were happy with this result as
+                some of our original models and their parameters led to over-fitting and conspicuously high accuracy
+                rates, often with low to no precision.</p>
+            </div>
+            <div class="col-lg-12 col-sm-12">
+              <p class="compare-headers">Classification Report</p>
+              <img class="link_image" src="Resources/Images/classification_report.png" alt="ML Certification Report">
+              <p class="compare-analysis-large" style="font-size: 20px">Upon performing GridSearchCV with an SVC
+                estimator and linear kernel, we achieved an overall 83% accuracy rate with 86% precision for determining
+                survival after one year post-op, with an f1 score of 0.9 (Conveys balance between precision and recall,
+                with 1 being perfect and 0 denotes failure). Ideally we would like to see similar results for predicting
+                if someone will not survive, as this is likely to impact the scope of care, however, given the
+                imbalanced nature of the dataset more extensive machine learning methods would be needed.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="machine-learning">
-      <h2>Machine Learning Models / Results</h2>
+  </div>
+  <hr>
+  <div class="resources">
 
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-sm-12">
-          <div class="compare">
-            <hr>
-            <div class="row">
-              <div class="col-lg-12 col-sm-12">
-                <p class="compare-headers">Model Summary</p>
-                  <img class="link_image" src="Resources/Images/model_summary.png" alt="ML Model Summary">
-                <p class="compare-analysis-large" style="font-size: 20px">Upon analysis of multiple models, we found the greatest accuracy using a Normal Neural Network Sequential model.</p>
-              </div>
-              <div class="col-lg-12 col-sm-12">
-                <p class="compare-headers">Model Evaluation</p>
-                  <img class="link_image" src="Resources/Images/model_evaluation.png" alt="ML Model Evaluation">
-                <p class="compare-analysis-large" style="font-size: 20px">The testing data resulted in a 64.4% loss and 81.9% accuracy.</p>
-              </div>
-              <div class="col-lg-12 col-sm-12">
-                <p class="compare-headers" >Classification Report</p>
-                  <img class="link_image" src="Resources/Images/classification_report.png" alt="ML Certification Report">
-                <p class="compare-analysis-large" style="font-size: 20px">Upon performing a grid search with an SVC estimator and linear kernel, we achieved an 83% accuracy rate with 86% precision for determining survival after one year post-op.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <hr>
-    <div class="resources">
-
-      <h4>Additional Lung Cancer Resources</h4> <br>
-      <li class="resource-links">
-        <a href="https://www.cancer.org/cancer/lung-cancer/about/key-statistics.html">American Cancer Society - Key Statistics</a> <br> <br>
-      </li>
-      <li class="resource-links">
-        <a href="https://www.lung.org/lung-health-diseases/lung-disease-lookup/lung-cancer/resource-library/lung-cancer-fact-sheet">American Lung Association - Lung Cancer Fact Sheet</a> <br> <br>
-      </li>
-      <li class="resource-links">
-        <a href="https://www.ohsu.edu/knight-cancer-institute/lung-cancer-diagnosis-and-treatment?gclid=Cj0KCQjwweyFBhDvARIsAA67M70jT0u4_iRU3YeJQE0uQb1yRkDVT_slWdkNvm67gvbFgdQ3mRkN1hsaAjYjEALw_wcB">OHSU Knight Cancer Institute - Lung Cancer Diagnosis and Treatment</a><br><br>
-      </li>
-      <li class="resource-links">
-        <a href="https://www.mayoclinic.org/departments-centers/thoracic-surgery/sections/overview/ovc-20421043">Mayo Clinic - Thoracic Surgery</a>
-      </li>
-    </div>
+    <h4>Additional Lung Cancer Resources</h4> <br>
+    <li class="resource-links">
+      <a href="https://www.cancer.org/cancer/lung-cancer/about/key-statistics.html">American Cancer Society - Key
+        Statistics</a> <br> <br>
+    </li>
+    <li class="resource-links">
+      <a
+        href="https://www.lung.org/lung-health-diseases/lung-disease-lookup/lung-cancer/resource-library/lung-cancer-fact-sheet">American
+        Lung Association - Lung Cancer Fact Sheet</a> <br> <br>
+    </li>
+    <li class="resource-links">
+      <a
+        href="https://www.ohsu.edu/knight-cancer-institute/lung-cancer-diagnosis-and-treatment?gclid=Cj0KCQjwweyFBhDvARIsAA67M70jT0u4_iRU3YeJQE0uQb1yRkDVT_slWdkNvm67gvbFgdQ3mRkN1hsaAjYjEALw_wcB">OHSU
+        Knight Cancer Institute - Lung Cancer Diagnosis and Treatment</a><br><br>
+    </li>
+    <li class="resource-links">
+      <a href="https://www.mayoclinic.org/departments-centers/thoracic-surgery/sections/overview/ovc-20421043">Mayo
+        Clinic - Thoracic Surgery</a>
+    </li>
+  </div>
+  <br>
+  <hr>
+  <footer class="footer">
+    <a href="https://archive.ics.uci.edu/ml/datasets/Thoracic+Surgery+Data#">Data Source / Acknowledgements</a> <br>
     <br>
-    <hr>
-    <footer class="footer">
-        <a href="https://archive.ics.uci.edu/ml/datasets/Thoracic+Surgery+Data#">Data Source / Acknowledgements</a> <br>
-      <br>
-      Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
-      <br>
-      <br>
-      Creators: Marek Lubicz (1), Konrad Pawelczyk (2), Adam Rzechonek (2), Jerzy Kolodziej (2)<br>
-      (1) Wroclaw University of Technology, wybrzeze Wyspianskiego 27, 50-370, Wroclaw, Poland <br>
-      (2) Wroclaw Medical University, wybrzeze L. Pasteura 1, 50-367 Wroclaw, Poland <br>
-      Donor: Maciej Zieba (maciej.zieba '@' pwr.wroc.pl), Jakub M. Tomczak (jakub.tomczak '@' pwr.wroc.pl), (+48) 71 320 44 53 <br>
-      Date: November, 2013 <br>
-      <br>
-    </footer>
+    Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA:
+    University of California, School of Information and Computer Science.
+    <br>
+    <br>
+    Creators: Marek Lubicz (1), Konrad Pawelczyk (2), Adam Rzechonek (2), Jerzy Kolodziej (2)<br>
+    (1) Wroclaw University of Technology, wybrzeze Wyspianskiego 27, 50-370, Wroclaw, Poland <br>
+    (2) Wroclaw Medical University, wybrzeze L. Pasteura 1, 50-367 Wroclaw, Poland <br>
+    Donor: Maciej Zieba (maciej.zieba '@' pwr.wroc.pl), Jakub M. Tomczak (jakub.tomczak '@' pwr.wroc.pl), (+48) 71 320
+    44 53 <br>
+    Date: November, 2013 <br>
+    <br>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
 
-  </body>
+</body>
+
 </html>
