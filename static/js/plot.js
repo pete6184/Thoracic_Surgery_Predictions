@@ -17,7 +17,7 @@ let layout = {
 
 Plotly.newPlot("plot1", data, layout);
 
-
+// Keeping for future use and further work on these plotly graphs
 // Preconditions on only surviving patients after 1 year
 // let trace2 = {
 //   x: ["Pain", "Haemoptysis", "Dyspnoea", "Cough",
@@ -160,7 +160,7 @@ let layout7 = {
 Plotly.newPlot("plot7", data7, layout7);
 
 // Multiple axis FVC FEC data
-d3.csv("../Resources/Data/ThoracicSurgery.csv").then(function(thorData) {
+d3.csv("../../Resources/Data/ThoracicSurgery.csv").then(function(thorData) {
 
   let fev1 = thorData.map(pre4 => pre4.PRE4)
   let fvc = thorData.map(pre5 => pre5.PRE5)
